@@ -1,1 +1,869 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mahmoud ❤️ Omnia</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #fff1f5, #f8d5df, #eab2c4);
+    color: #5c263c;
+    overflow-x: hidden;
+}
+
+/* =========================
+   شاشة كلمة السر
+========================= */
+
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(circle at top, #d96b91, #8d3155 55%, #4b172d);
+}
+
+.lockBox {
+    width: 100%;
+    max-width: 390px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+    color: white;
+}
+
+.lockBox .bigHeart {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.lockBox h1 {
+    font-size: 29px;
+    margin-bottom: 12px;
+}
+
+.lockBox p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+#password {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 15px;
+
+    text-align: center;
+
+    font-size: 24px;
+
+    outline: none;
+
+    margin-bottom: 15px;
+}
+
+#openBtn {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: white;
+    color: #8d3155;
+
+    font-size: 19px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#error {
+    display: none;
+
+    margin-top: 15px;
+
+    color: #ffe3eb;
+
+    font-size: 16px;
+}
+
+/* =========================
+   الصفحة الرئيسية
+========================= */
+
+#page {
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 25px 15px 50px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+
+    margin: auto;
+}
+
+/* =========================
+   العنوان
+========================= */
+
+.title {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.title .from {
+    font-size: 20px;
+    color: #85566a;
+
+    margin-bottom: 5px;
+}
+
+.title h1 {
+    font-size: 38px;
+    color: #7b2346;
+
+    margin-bottom: 5px;
+}
+
+.title .to {
+    font-size: 27px;
+    font-weight: bold;
+
+    color: #a63860;
+}
+
+/* =========================
+   الصور
+========================= */
+
+.slider {
+    width: 100%;
+    height: 430px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 50px rgba(100,30,60,0.25);
+
+    margin-bottom: 15px;
+}
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.5s ease,
+        transform 6s ease;
+}
+
+.slide.active {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+/* =========================
+   نقاط الصور
+========================= */
+
+.dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 28px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #d79aaa;
+
+    transition: 0.3s;
+}
+
+.dot.active {
+    width: 25px;
+
+    border-radius: 10px;
+
+    background: #963654;
+}
+
+/* =========================
+   الرسالة
+========================= */
+
+.letter {
+    padding: 32px 22px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.78);
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 40px rgba(100,30,60,0.15);
+
+    backdrop-filter: blur(10px);
+}
+
+.letter h2 {
+    font-size: 30px;
+
+    color: #8b2d50;
+
+    margin-bottom: 25px;
+}
+
+.message {
+    font-size: 22px;
+
+    font-weight: bold;
+
+    line-height: 2;
+
+    color: #542336;
+}
+
+.message p {
+    margin-bottom: 15px;
+}
+
+.date {
+    margin-top: 25px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #9b3459;
+}
+
+/* =========================
+   التوقيع
+========================= */
+
+.signature {
+    margin-top: 30px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #e4c2cd;
+}
+
+.signature .fromText {
+    font-size: 19px;
+
+    color: #8b6272;
+}
+
+.signature .name {
+    font-size: 31px;
+
+    font-weight: bold;
+
+    color: #7b2346;
+
+    margin: 5px 0;
+}
+
+.signature .toText {
+    font-size: 20px;
+
+    color: #a4385c;
+}
+
+/* =========================
+   زر الأغنية
+========================= */
+
+.musicBox {
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+.musicBtn {
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 15px 28px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #8b2f51,
+        #c85c7d
+    );
+
+    box-shadow:
+        0 10px 25px rgba(130,40,75,0.25);
+
+    cursor: pointer;
+}
+
+/* =========================
+   القلوب
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    z-index: 1;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation: floatHeart 10s linear infinite;
+
+    opacity: 0;
+}
+
+.heart:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 45%;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+    left: 65%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(5) {
+    left: 82%;
+    animation-delay: 3s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* =========================
+   الموبايل
+========================= */
+
+@media (max-width: 600px) {
+
+    #page {
+        padding: 18px 12px 40px;
+    }
+
+    .title h1 {
+        font-size: 32px;
+    }
+
+    .title .to {
+        font-size: 24px;
+    }
+
+    .slider {
+        height: 390px;
+        border-radius: 24px;
+    }
+
+    .letter {
+        padding: 28px 17px;
+    }
+
+    .letter h2 {
+        font-size: 26px;
+    }
+
+    .message {
+        font-size: 20px;
+        line-height: 1.9;
+    }
+
+    .date {
+        font-size: 22px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- القلوب -->
+
+<div class="heart">❤️</div>
+<div class="heart">💗</div>
+<div class="heart">💕</div>
+<div class="heart">💖</div>
+<div class="heart">❤️</div>
+
+
+<!-- =========================
+     شاشة كلمة السر
+========================= -->
+
+<div id="lockScreen">
+
+    <div class="lockBox">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+        <h1>
+            رسالة خاصة
+        </h1>
+
+        <p>
+            من محمود إلى أمنية
+            <br>
+            افتحي رسالتك يا حبيبتي ❤️
+        </p>
+
+        <input
+            id="password"
+            type="password"
+            inputmode="numeric"
+            placeholder="كلمة السر"
+        >
+
+        <button id="openBtn">
+            افتحي الرسالة ❤️
+        </button>
+
+        <div id="error">
+            كلمة السر غلط ❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     الصفحة الرئيسية
+========================= -->
+
+<div id="page">
+
+    <div class="container">
+
+
+        <!-- العنوان -->
+
+        <div class="title">
+
+            <div class="from">
+                From
+            </div>
+
+            <h1>
+                Mahmoud ❤️
+            </h1>
+
+            <div class="to">
+                To Omnia
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             الصور
+        ========================= -->
+
+        <div class="slider">
+
+            <img
+                class="slide active"
+                src="1785591711299.png"
+                alt="Mahmoud and Omnia"
+            >
+
+            <img
+                class="slide"
+                src="١.jpg"
+                alt="Mahmoud and Omnia"
+            >
+
+            <img
+                class="slide"
+                src="٣.jpg"
+                alt="Mahmoud and Omnia"
+            >
+
+        </div>
+
+
+        <!-- نقاط الصور -->
+
+        <div class="dots">
+
+            <span class="dot active"></span>
+
+            <span class="dot"></span>
+
+            <span class="dot"></span>
+
+        </div>
+
+
+        <!-- =========================
+             الرسالة
+        ========================= -->
+
+        <div class="letter">
+
+            <h2>
+                كل سنة وإنتِ حبيبتي ❤️
+            </h2>
+
+            <div class="message">
+
+                <p>
+                    كل سنة وإنتِ حبيبتي ومراتي
+                    وأجمل حاجة حصلت في حياتي ❤️
+                </p>
+
+                <p>
+                    كل سنة وإحنا مع بعض،
+                    وكل سنة وإنتِ سندي وراحتي وأماني.
+                </p>
+
+                <p>
+                    ربنا يخليكي ليا،
+                    ويديم بينا المودة والرحمة،
+                    ويجمعنا دايمًا على خير وحب.
+                </p>
+
+                <p>
+                    عيد جواز سعيد علينا يا حبيبتي ❤️💍
+                </p>
+
+            </div>
+
+
+            <div class="date">
+                ٢٠ / ٨ / ٢٠٢٦
+            </div>
+
+
+            <!-- التوقيع -->
+
+            <div class="signature">
+
+                <div class="fromText">
+                    From
+                </div>
+
+                <div class="name">
+                    Mahmoud ❤️
+                </div>
+
+                <div class="toText">
+                    To Omnia
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             الأغنية
+        ========================= -->
+
+        <div class="musicBox">
+
+            <button
+                class="musicBtn"
+                id="musicBtn"
+            >
+                🎵 تشغيل الأغنية
+            </button>
+
+            <audio
+                id="music"
+                loop
+            >
+
+                <source
+                    src="amrw_dyab_hbytk.mp3"
+                    type="audio/mpeg"
+                >
+
+            </audio>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   كلمة السر
+========================= */
+
+const correctPassword = "4";
+
+const lockScreen =
+    document.getElementById("lockScreen");
+
+const page =
+    document.getElementById("page");
+
+const password =
+    document.getElementById("password");
+
+const openBtn =
+    document.getElementById("openBtn");
+
+const error =
+    document.getElementById("error");
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+
+openBtn.addEventListener("click", function () {
+
+    if (password.value === correctPassword) {
+
+        lockScreen.style.display = "none";
+
+        page.style.display = "block";
+
+        /* تشغيل الأغنية بعد الضغط */
+        music.play().then(function () {
+
+            musicBtn.innerHTML =
+                "⏸ إيقاف الأغنية";
+
+        }).catch(function () {
+
+            musicBtn.innerHTML =
+                "🎵 تشغيل الأغنية";
+
+        });
+
+    } else {
+
+        error.style.display = "block";
+
+        password.value = "";
+
+    }
+
+});
+
+
+/* الضغط على Enter */
+
+password.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+
+        openBtn.click();
+
+    }
+
+});
+
+
+/* =========================
+   تقليب الصور
+========================= */
+
+const slides =
+    document.querySelectorAll(".slide");
+
+const dots =
+    document.querySelectorAll(".dot");
+
+let currentSlide = 0;
+
+
+function showSlide(index) {
+
+    slides.forEach(function (slide) {
+
+        slide.classList.remove("active");
+
+    });
+
+    dots.forEach(function (dot) {
+
+        dot.classList.remove("active");
+
+    });
+
+    slides[index].classList.add("active");
+
+    dots[index].classList.add("active");
+
+}
+
+
+/* كل 5 ثواني */
+
+setInterval(function () {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+}, 5000);
+
+
+/* =========================
+   زر الأغنية
+========================= */
+
+musicBtn.addEventListener("click", function () {
+
+    if (music.paused) {
+
+        music.play();
+
+        musicBtn.innerHTML =
+            "⏸ إيقاف الأغنية";
+
+    } else {
+
+        music.pause();
+
+        musicBtn.innerHTML =
+            "🎵 تشغيل الأغنية";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
