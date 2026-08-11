@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>From Mahmoud To Omnia ❤️</title>
-
-<style>
-
-/* =========================
-   GENERAL
-========================= */
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -23,1182 +5,313 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body{
-
     min-height:100vh;
-
-    font-family:
-    "Tahoma",
-    "Arial",
-    sans-serif;
-
+    font-family:Tahoma,Arial,sans-serif;
     color:#fff;
-
     background:
-    radial-gradient(
-        circle at top,
-        #fff1f4 0%,
-        #e8a7b8 30%,
-        #9d526b 65%,
-        #3d1725 100%
-    );
-
+    radial-gradient(circle at top,#fff4f6 0%,#e8a7b8 28%,#9d526b 65%,#3d1725 100%);
     overflow-x:hidden;
 }
 
-
-/* =========================
-   BACKGROUND HEARTS
-========================= */
-
 .hearts{
-
     position:fixed;
-
     inset:0;
-
     overflow:hidden;
-
     pointer-events:none;
-
     z-index:0;
 }
 
 .heart{
-
     position:absolute;
-
     bottom:-60px;
-
-    font-size:22px;
-
+    font-size:28px;
     opacity:0;
-
-    animation:
-    floatHeart 12s linear infinite;
+    animation:floatHeart 12s linear infinite;
 }
 
-.heart:nth-child(1){
-    left:8%;
-    animation-delay:0s;
-}
-
-.heart:nth-child(2){
-    left:25%;
-    animation-delay:3s;
-}
-
-.heart:nth-child(3){
-    left:45%;
-    animation-delay:6s;
-}
-
-.heart:nth-child(4){
-    left:65%;
-    animation-delay:2s;
-}
-
-.heart:nth-child(5){
-    left:82%;
-    animation-delay:5s;
-}
-
-.heart:nth-child(6){
-    left:94%;
-    animation-delay:8s;
-}
-
+.heart:nth-child(1){left:8%}
+.heart:nth-child(2){left:25%;animation-delay:3s}
+.heart:nth-child(3){left:45%;animation-delay:6s}
+.heart:nth-child(4){left:65%;animation-delay:2s}
+.heart:nth-child(5){left:82%;animation-delay:5s}
+.heart:nth-child(6){left:94%;animation-delay:8s}
 
 @keyframes floatHeart{
-
     0%{
-        transform:
-        translateY(0)
-        rotate(0deg);
-
+        transform:translateY(0) rotate(0);
         opacity:0;
     }
-
-    15%{
-        opacity:.5;
-    }
-
+    15%{opacity:.55}
     100%{
-
-        transform:
-        translateY(-115vh)
-        rotate(360deg);
-
+        transform:translateY(-115vh) rotate(360deg);
         opacity:0;
     }
 }
-
-
-/* =========================
-   CONTAINER
-========================= */
 
 .container{
-
     position:relative;
-
     z-index:2;
-
     width:100%;
-
-    max-width:480px;
-
+    max-width:500px;
     margin:auto;
-
-    padding:20px;
+    padding:18px;
 }
 
-
-/* =========================
-   LOGIN
-========================= */
-
 .login{
-
     min-height:94vh;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 }
 
-
-.login-card{
-
+.login-card,
+.main-card{
     width:100%;
-
-    padding:35px 25px;
-
+    padding:32px 22px;
     text-align:center;
-
-    border-radius:32px;
-
-    background:
-    rgba(255,255,255,.16);
-
-    border:
-    1px solid
-    rgba(255,255,255,.35);
-
-    backdrop-filter:
-    blur(18px);
-
-    box-shadow:
-    0 25px 70px
-    rgba(0,0,0,.25);
+    border-radius:34px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.4);
+    backdrop-filter:blur(20px);
+    box-shadow:0 25px 70px rgba(0,0,0,.28);
 }
-
 
 .small-heart{
-
-    font-size:55px;
-
-    margin-bottom:10px;
-
-    animation:
-    heartbeat 1.8s infinite;
+    font-size:72px;
+    margin-bottom:14px;
+    animation:heartbeat 1.8s infinite;
 }
-
 
 @keyframes heartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.12);
-    }
+    50%{transform:scale(1.13)}
 }
-
 
 .login-card h1{
-
-    font-size:29px;
-
-    font-weight:normal;
-
-    margin-bottom:22px;
-
-    letter-spacing:1px;
+    font-size:34px;
+    line-height:1.5;
+    margin-bottom:25px;
 }
-
 
 .names{
-
-    line-height:2;
-
-    margin-bottom:22px;
-
-    font-size:17px;
+    line-height:1.7;
+    margin-bottom:25px;
 }
-
 
 .names span{
-
     display:block;
-
+    font-size:15px;
+    letter-spacing:4px;
     opacity:.75;
-
-    font-size:13px;
-
-    letter-spacing:2px;
+    margin-bottom:3px;
 }
-
 
 .names strong{
-
     display:block;
-
-    font-size:25px;
-
+    font-size:30px;
     font-weight:normal;
-
-    margin-bottom:7px;
+    margin-bottom:8px;
 }
 
+.arrow{
+    font-size:27px;
+    margin:5px 0;
+}
 
 .date{
-
-    font-size:16px;
-
+    font-size:22px;
     letter-spacing:2px;
-
-    margin-bottom:25px;
-
-    opacity:.9;
+    margin-bottom:27px;
 }
-
 
 input{
-
     width:100%;
-
-    padding:16px;
-
+    padding:18px;
     border:none;
-
     outline:none;
-
-    border-radius:17px;
-
+    border-radius:18px;
     text-align:center;
-
-    font-size:20px;
-
-    margin-bottom:13px;
+    font-size:22px;
+    margin-bottom:14px;
 }
 
-
-.open-button{
-
+.open-button,
+.music-button{
     width:100%;
-
-    padding:16px;
-
+    padding:18px;
     border:none;
-
-    border-radius:17px;
-
+    border-radius:18px;
     background:#fff;
-
     color:#9d526b;
-
     font-family:inherit;
-
-    font-size:17px;
-
+    font-size:20px;
     font-weight:bold;
-
     cursor:pointer;
-
-    transition:.3s;
 }
-
-
-.open-button:active{
-
-    transform:scale(.97);
-}
-
 
 .error{
-
     display:none;
-
-    margin-top:13px;
-
-    font-size:14px;
-
-    color:#ffe4eb;
+    margin-top:15px;
+    font-size:16px;
 }
-
-
-/* =========================
-   MAIN PAGE
-========================= */
 
 .main{
-
     display:none;
-
-    animation:
-    showPage 1.5s ease;
+    padding-top:15px;
+    animation:showPage 1.5s ease;
 }
-
 
 @keyframes showPage{
-
     from{
-
         opacity:0;
-
-        transform:
-        translateY(30px);
+        transform:translateY(35px);
     }
-
     to{
-
         opacity:1;
-
-        transform:
-        translateY(0);
+        transform:translateY(0);
     }
 }
-
-
-.main-card{
-
-    padding:22px;
-
-    text-align:center;
-
-    border-radius:32px;
-
-    background:
-    rgba(255,255,255,.15);
-
-    border:
-    1px solid
-    rgba(255,255,255,.3);
-
-    backdrop-filter:
-    blur(18px);
-
-    box-shadow:
-    0 25px 70px
-    rgba(0,0,0,.3);
-}
-
-
-/* =========================
-   FROM / TO
-========================= */
 
 .from-to{
-
-    margin-bottom:22px;
-
+    margin-bottom:24px;
     line-height:1.8;
 }
 
-
 .from-to .label{
-
-    font-size:12px;
-
-    letter-spacing:3px;
-
+    font-size:15px;
+    letter-spacing:4px;
     opacity:.7;
-
-    text-transform:uppercase;
 }
-
 
 .from-to .name{
-
-    font-size:27px;
-
-    margin-bottom:7px;
+    font-size:32px;
+    margin-bottom:8px;
 }
-
-
-.arrow{
-
-    font-size:20px;
-
-    margin:5px 0;
-
-    opacity:.7;
-}
-
 
 .anniversary{
-
-    font-size:14px;
-
+    font-size:20px;
+    line-height:1.8;
     letter-spacing:2px;
-
-    opacity:.8;
-
-    margin-bottom:20px;
-}
-
-
-/* =========================
-   PHOTO
-========================= */
-
-.photo-container{
-
-    position:relative;
-
-    width:100%;
-
-    aspect-ratio:1 / 1;
-
-    overflow:hidden;
-
-    border-radius:27px;
-
-    border:
-    4px solid
-    rgba(255,255,255,.8);
-
-    box-shadow:
-    0 18px 45px
-    rgba(0,0,0,.3);
-
+    opacity:.9;
     margin-bottom:22px;
 }
 
-
-.photo{
-
+.photo-container{
+    position:relative;
     width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    opacity:1;
-
-    transform:scale(1);
-
-    transition:
-
-    opacity 1.2s ease,
-
-    transform 1.8s ease;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    border-radius:30px;
+    border:5px solid rgba(255,255,255,.9);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    margin-bottom:22px;
 }
 
+.photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:opacity 1.3s ease,transform 1.8s ease;
+}
 
 .photo.fade{
-
     opacity:0;
-
     transform:scale(1.08);
 }
 
-
-/* =========================
-   PHOTO INDICATORS
-========================= */
-
 .dots{
-
     display:flex;
-
     justify-content:center;
-
-    gap:7px;
-
-    margin-top:-10px;
-
-    margin-bottom:22px;
+    gap:8px;
+    margin-top:-8px;
+    margin-bottom:25px;
 }
 
-
 .dot{
-
-    width:7px;
-
-    height:7px;
-
+    width:9px;
+    height:9px;
     border-radius:50%;
-
-    background:
-    rgba(255,255,255,.4);
-
+    background:rgba(255,255,255,.4);
     transition:.5s;
 }
 
-
 .dot.active{
-
-    width:22px;
-
+    width:28px;
     border-radius:10px;
-
     background:#fff;
 }
-
-
-/* =========================
-   MESSAGE
-========================= */
 
 .message{
-
-    padding:24px 18px;
-
-    border-radius:25px;
-
-    background:
-    rgba(255,255,255,.10);
-
-    margin-bottom:20px;
-
-    line-height:2.2;
-
-    font-size:18px;
+    padding:28px 20px;
+    border-radius:27px;
+    background:rgba(255,255,255,.12);
+    margin-bottom:22px;
+    line-height:2.3;
+    font-size:21px;
 }
-
 
 .message-line{
-
     display:block;
-
-    margin-bottom:10px;
-
+    margin-bottom:14px;
     opacity:0;
-
-    transform:
-    translateY(15px);
-
-    animation:
-    messageShow 1s forwards;
+    transform:translateY(15px);
+    animation:messageShow 1s forwards;
 }
 
-
-.message-line:nth-child(1){
-    animation-delay:.4s;
-}
-
-.message-line:nth-child(2){
-    animation-delay:.8s;
-}
-
-.message-line:nth-child(3){
-    animation-delay:1.2s;
-}
-
-.message-line:nth-child(4){
-    animation-delay:1.6s;
-}
-
+.message-line:nth-child(1){animation-delay:.4s}
+.message-line:nth-child(2){animation-delay:.8s}
+.message-line:nth-child(3){animation-delay:1.2s}
+.message-line:nth-child(4){animation-delay:1.6s}
 
 @keyframes messageShow{
-
     to{
-
         opacity:1;
-
-        transform:
-        translateY(0);
+        transform:translateY(0);
     }
 }
-
 
 .highlight{
-
-    font-size:20px;
-
+    font-size:24px;
     font-weight:bold;
 }
-
-
-/* =========================
-   MUSIC
-========================= */
 
 .music-button{
-
-    width:100%;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:17px;
-
-    background:#fff;
-
-    color:#9d526b;
-
-    font-family:inherit;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    cursor:pointer;
+    font-size:19px;
 }
-
 
 .music-status{
-
-    font-size:12px;
-
-    opacity:.75;
-
-    margin-top:9px;
+    font-size:15px;
+    opacity:.8;
+    margin-top:11px;
 }
-
-
-/* =========================
-   FOOTER
-========================= */
 
 .footer{
-
-    margin-top:22px;
-
-    font-size:13px;
-
-    line-height:2;
-
-    opacity:.7;
+    margin-top:25px;
+    font-size:15px;
+    line-height:2.2;
+    opacity:.75;
 }
 
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     HEARTS
-========================= -->
-
-<div class="hearts">
-
-    <div class="heart">❤️</div>
-
-    <div class="heart">💕</div>
-
-    <div class="heart">🤍</div>
-
-    <div class="heart">💗</div>
-
-    <div class="heart">❤️</div>
-
-    <div class="heart">💕</div>
-
-</div>
-
-
-
-<div class="container">
-
-
-<!-- =========================
-     LOGIN SCREEN
-========================= -->
-
-<section
-class="login"
-id="login"
->
-
-<div class="login-card">
-
-
-<div class="small-heart">
-❤️
-</div>
-
-
-<h1>
-رسالة حب خاصة
-</h1>
-
-
-<div class="names">
-
-<span>FROM</span>
-
-<strong>
-Mahmoud
-</strong>
-
-
-<div class="arrow">
-♡
-</div>
-
-
-<span>TO</span>
-
-<strong>
-Omnia ❤️
-</strong>
-
-</div>
-
-
-<div class="date">
-
-20 / 8 / 2026 💍
-
-</div>
-
-
-<input
-id="password"
-type="password"
-inputmode="numeric"
-placeholder="اكتبي الباسورد ❤️"
->
-
-
-<button
-class="open-button"
-onclick="openMessage()"
->
-
-افتحي رسالتك ❤️
-
-</button>
-
-
-<div
-class="error"
-id="error"
->
-
-الباسورد غلط يا Omnia ❤️
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
-<section
-class="main"
-id="main"
->
-
-
-<div class="main-card">
-
-
-<div class="from-to">
-
-<div class="label">
-FROM
-</div>
-
-<div class="name">
-Mahmoud ❤️
-</div>
-
-
-<div class="arrow">
-♡
-</div>
-
-
-<div class="label">
-TO
-</div>
-
-<div class="name">
-Omnia ❤️
-</div>
-
-</div>
-
-
-<div class="anniversary">
-
-20 / 8 / 2026
-<br>
-Our Anniversary 💍
-
-</div>
-
-
-
-<!-- PHOTO -->
-
-<div class="photo-container">
-
-<img
-id="photo"
-class="photo"
-src="1785591711299.png"
-alt="Omnia ❤️"
->
-
-</div>
-
-
-<div
-class="dots"
-id="dots"
->
-
-<div class="dot active"></div>
-
-<div class="dot"></div>
-
-<div class="dot"></div>
-
-<div class="dot"></div>
-
-</div>
-
-
-
-<!-- MESSAGE -->
-
-<div class="message">
-
-
-<span class="message-line">
-
-كل سنة وإنتِ حبيبتي ومراتي وأجمل حاجة حصلت في حياتي ❤️
-
-</span>
-
-
-<span class="message-line">
-
-كل سنة وإحنا مع بعض، وكل سنة وإنتِ سندي وراحتي وأماني
-
-</span>
-
-
-<span class="message-line">
-
-ربنا يخليكي ليا، ويديم بينا المودة والرحمة، ويجمعنا دايمًا على خير وحب.
-
-</span>
-
-
-<span class="message-line highlight">
-
-عيد جواز سعيد علينا يا حبيبتي ❤️💍
-
-</span>
-
-
-</div>
-
-
-
-<!-- MUSIC -->
-
-<button
-class="music-button"
-id="musicButton"
-onclick="toggleMusic()"
->
-
-🎵 شغلي الأغنية
-
-</button>
-
-
-<div
-class="music-status"
-id="musicStatus"
->
-
-الأغنية دي ليكي يا Omnia ❤️
-
-</div>
-
-
-
-<div class="footer">
-
-From Mahmoud ❤️
-<br>
-To Omnia
-<br>
-20 / 8 / 2026 💍
-
-</div>
-
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =========================
-     MUSIC FILE
-========================= -->
-
-<audio
-id="song"
-loop
->
-
-<source
-src="amrw_dyab_hbytk.mp3"
-type="audio/mpeg"
->
-
-</audio>
-
-
-
-<script>
-
-
-/* =========================
-   PASSWORD
-========================= */
-
-const PASSWORD = "2082021";
-
-
-/* =========================
-   ELEMENTS
-========================= */
-
-const login =
-document.getElementById("login");
-
-const main =
-document.getElementById("main");
-
-const password =
-document.getElementById("password");
-
-const error =
-document.getElementById("error");
-
-const song =
-document.getElementById("song");
-
-const musicButton =
-document.getElementById("musicButton");
-
-const musicStatus =
-document.getElementById("musicStatus");
-
-const photo =
-document.getElementById("photo");
-
-const dots =
-document.querySelectorAll(".dot");
-
-
-/* =========================
-   PHOTOS
-========================= */
-
-const photos = [
-
-"1785591711299.png",
-
-"IMG-20260527-WA0068.jpg",
-
-"١.jpg",
-
-"٣.jpg"
-
-];
-
-
-let currentPhoto = 0;
-
-
-/* =========================
-   OPEN MESSAGE
-========================= */
-
-function openMessage(){
-
-    if(password.value !== PASSWORD){
-
-        error.style.display = "block";
-
-        password.value = "";
-
-        setTimeout(function(){
-
-            error.style.display = "none";
-
-        },2000);
-
-        return;
+@media(max-width:380px){
+
+    .login-card,
+    .main-card{
+        padding:27px 17px;
     }
 
+    .login-card h1{
+        font-size:29px;
+    }
 
-    login.style.display = "none";
+    .from-to .name{
+        font-size:28px;
+    }
 
-    main.style.display = "block";
+    .message{
+        font-size:19px;
+        line-height:2.2;
+    }
 
-
-    /* محاولة تشغيل الأغنية */
-
-    song.play()
-
-    .then(function(){
-
-        musicButton.textContent =
-        "⏸️ وقفي الأغنية";
-
-        musicStatus.textContent =
-        "الأغنية شغالة مخصوص ليكي ❤️";
-
-    })
-
-    .catch(function(){
-
-        musicStatus.textContent =
-        "اضغطي على الزر لتشغيل الأغنية 🎵❤️";
-
-    });
-
+    .highlight{
+        font-size:21px;
+    }
 }
-
-
-/* =========================
-   ENTER BUTTON
-========================= */
-
-password.addEventListener(
-"keydown",
-function(event){
-
-    if(event.key === "Enter"){
-
-        openMessage();
-
-    }
-
-});
-
-
-/* =========================
-   CHANGE PHOTO
-========================= */
-
-function changePhoto(){
-
-    photo.classList.add("fade");
-
-
-    setTimeout(function(){
-
-        currentPhoto++;
-
-        if(currentPhoto >= photos.length){
-
-            currentPhoto = 0;
-
-        }
-
-
-        photo.src =
-        photos[currentPhoto];
-
-
-        dots.forEach(function(dot,index){
-
-            dot.classList.remove("active");
-
-            if(index === currentPhoto){
-
-                dot.classList.add("active");
-
-            }
-
-        });
-
-
-        photo.classList.remove("fade");
-
-    },900);
-
-}
-
-
-/* =========================
-   PHOTO TIMER
-========================= */
-
-setInterval(function(){
-
-    if(main.style.display === "block"){
-
-        changePhoto();
-
-    }
-
-},5000);
-
-
-/* =========================
-   MUSIC
-========================= */
-
-function toggleMusic(){
-
-    if(song.paused){
-
-        song.play();
-
-        musicButton.textContent =
-        "⏸️ وقفي الأغنية";
-
-        musicStatus.textContent =
-        "الأغنية شغالة مخصوص ليكي ❤️";
-
-    }
-
-    else{
-
-        song.pause();
-
-        musicButton.textContent =
-        "🎵 شغلي الأغنية";
-
-        musicStatus.textContent =
-        "الأغنية متوقفة مؤقتًا";
-
-    }
-
-}
-
-</script>
-
-
-</body>
-
-  </html>
